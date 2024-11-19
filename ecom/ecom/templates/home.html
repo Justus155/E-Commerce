@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer and Order Management</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS file -->
+</head>
+<body>
+    <h1>Customer and Order Management</h1>
+
+    <section>
+        <h2>Add Customer</h2>
+        <form id="customer-form">
+            <label for="customer-name">Name:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+            
+            <label for="customer-email">Email:</label>
+            <input type="email" id="customer-email" name="customer-email" required>
+            
+            <button type="submit">Add Customer</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Place Order</h2>
+        <form id="order-form">
+            <label for="customer-select">Select Customer:</label>
+            <select id="customer-select" name="customer-select" required>
+                <!-- Options will be populated dynamically -->
+            </select>
+            
+            <label for="order-total">Total Amount:</label>
+            <input type="number" id="order-total" name="order-total" step="0.01" required>
+            
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script> <!-- Optional: Link to your JavaScript file -->
+</body>
+</html>

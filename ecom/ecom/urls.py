@@ -1,9 +1,10 @@
 from django.shortcuts import render,get_list_or_404
 from django.http import HttpResponse
-from.models import post
-def homepage(request):
-    posts = post.objects.all()
-    return render(request, 'home.html', {request: ''})
+from django.contrib import admin
+from django.urls import path
+from.import views
 
-def post_detail(request):
-    return render(request, 'post.html', {request: ''})
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.homepage)
+]
