@@ -7,6 +7,16 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+    
+class post(models.Model):
+    # Fields for the post model
+    title = models.CharField(max_length=100)  # Title of the post
+    content = models.TextField()  # Content of the post
+    author = models.CharField(max_length=100)  # Author of the post
+    created_date = models.DateTimeField(auto_now_add=True)  # Automatically set the date when the post is created
+
+    def __str__(self):
+        return self.title
 
 class Order(models.Model):
     # Fields for the Order model
