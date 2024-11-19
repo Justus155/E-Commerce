@@ -1,7 +1,10 @@
 from django.http import HttpResponse 
-import django.shortcuts
 from django.shortcuts import render
+from django.shortcuts import render
+from models import post
 
-def homepage(request):
-    return render(request, 'home.html')
+def home(request):
+    posts = post.objects.all()
+    return render(request, 'admin/home.html', {'posts': posts})
+
 
