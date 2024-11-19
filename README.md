@@ -25,3 +25,30 @@ for powershell input:
  # Creating the admin user
  # python manage.py createsuperuser
  # Creating the admin user
+
+# models.py
+
+
+- **Customer Model**: 
+  - Contains fields for `name` and `email`. The `email` field is unique to ensure no two customers can register with the same email.
+  
+- **Order Model**: 
+  - Contains a foreign key `customer` that links each order to a specific customer. The `on_delete=models.CASCADE` option means that if a customer is deleted, all their associated orders will also be deleted.
+  - The `order_date` field automatically records when the order was created.
+```python
+class Customer(models.Model):
+    # Customer's name
+    name = models.CharField(max_length=100)
+    # Unique email for each customer
+    email = models.EmailField(unique=True)
+
+class Order(models.Model):
+    # Foreign key to link each order to a customer
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='orders')
+    # Automatically set the date when the order is created
+    order_date = models.DateTimeField(auto_now_add=True)
+    # Total amount for the order
+    total_amount = models.DecimalField(max_digits=10, decimal_places=2)
+```
+
+This setup allows you to manage customers and their orders effectively, ensuring that each customer can have multiple orders while maintaining a clear relationship between the two models. If you have any questions or need further assistance, feel free to ask!
