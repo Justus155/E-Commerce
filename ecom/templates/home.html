@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer and Order Management</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to your CSS file -->
+    <title>Business System</title>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <h1>Customer and Order Management</h1>
-
-    <section>
-        <h2>Add Customer</h2>
-        <form id="customer-form">
-            <label for="customer-name">Name:</label>
+    <div class="container">
+        <h1>Business System</h1>
+        <form id="create-customer-form">
+            <h2>Create Customer</h2>
+            <label for="customer-name">Customer Name:</label>
             <input type="text" id="customer-name" name="customer-name" required>
-            
-            <label for="customer-email">Email:</label>
-            <input type="email" id="customer-email" name="customer-email" required>
-            
-            <button type="submit">Add Customer</button>
+            <button type="submit">Create Customer</button>
         </form>
-    </section>
-
-    <section>
-        <h2>Place Order</h2>
-        <form id="order-form">
-            <label for="customer-select">Select Customer:</label>
-            <select id="customer-select" name="customer-select" required>
-                <!-- Options will be populated dynamically -->
+        <div id="customer-list">
+            <h2>Select Customer</h2>
+            <select id="customer-select">
+                <option value="">--Select a Customer--</option>
             </select>
-            
-            <label for="order-total">Total Amount:</label>
-            <input type="number" id="order-total" name="order-total" step="0.01" required>
-            
-            <button type="submit">Place Order</button>
-        </form>
-    </section>
-
-    <script src="script.js"></script> <!-- Optional: Link to your JavaScript file -->
+        </div>
+        <div id="order-section" style="display: none;">
+            <h2>Add Orders</h2>
+            <form id="add-order-form">
+                <label for="order-description">Order Description:</label>
+                <input type="text" id="order-description" name="order-description" required>
+                <label for="order-price">Order Price:</label>
+                <input type="number" id="order-price" name="order-price" required>
+                <button type="submit">Add Order</button>
+            </form>
+            <div id="order-list">
+                <h3>Orders</h3>
+                <ul id="orders"></ul>
+                <h3>Total Price: $<span id="total-price">0.00</span></h3>
+            </div>
+        </div>
+    </div>
+    <script src="static/js.js"></script>
 </body>
 </html>
