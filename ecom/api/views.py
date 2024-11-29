@@ -1,11 +1,9 @@
-
-
 from django.shortcuts import render
 
 # Create your views here.
 from rest_framework import generics
 from .models import Product
-from .serializers import ProductSerializer
+from  .serializer import ProductSerializer
 
 #POST /products: Creates a new product with the data sent in the request body, and returns the new product as JSON.
 class ProductListCreate(generics.ListCreateAPIView):
@@ -15,7 +13,7 @@ class ProductListCreate(generics.ListCreateAPIView):
     from rest_framework import generics, status
 from rest_framework.response import Response
 from .models import Product
-from .serializers import ProductSerializer
+
 
 class ProductListCreate(generics.ListCreateAPIView):
     queryset = Product.objects.all()
