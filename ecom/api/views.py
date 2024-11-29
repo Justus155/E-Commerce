@@ -31,3 +31,8 @@ class ProductListCreate(generics.ListCreateAPIView):
 class ProductRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
+
+def homepage(request):
+    return render(request, 'home.html')
+    # return render(request, 'templates/home.html')
+
