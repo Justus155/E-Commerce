@@ -26,3 +26,6 @@ go to settings.py on your project
 add 
 INSTALLED_APPS=['rest_framework'] 
 
+
+# Testing the API endpoints manually or with the provided Python script.
+
